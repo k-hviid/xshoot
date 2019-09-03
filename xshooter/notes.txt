@@ -1,0 +1,38 @@
+remstart
+
+
+
+BRAINSTORM
+
+roguelike
+
+
+Let every actor follow the same rules
+
+AI
+
+
+tilfældigt genereret landskab, af printed images
+
+Der kommer gradvist flere og værre fjender over tid, så man skal opgradere
+
+adventure elementer
+
+race+class
+
+
+sprite enemies?
+
+fjender nærkamp
+
+
+
+Load all media, or only when playing?
+
+
+
+
+
+
+
+remend
