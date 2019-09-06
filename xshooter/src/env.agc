@@ -23,8 +23,10 @@ _env:
 	
 	// Create the ground
 	floorOID as integer
-	floorOID = createObjectPlane (200.0, 200.0)
-	rotateObjectLocalX (floorOID, 90.0)
+	//floorOID = createObjectPlane (200.0, 200.0)
+	floorOID = createObjectBox (200.0, 1.0, 200.0)
+	SetObjectPosition(floorOID, 0.0, -0.5, 0.0)
+	//rotateObjectLocalX (floorOID, 90.0)
 	
 	floorIID as integer
 	floorIID = loadImage("a_dif.png")
@@ -39,7 +41,8 @@ _env:
 	setObjectImage (floorOID, floorIID, 0)
 	SetObjectNormalMap (floorOID, floorNrmIID)
 	
-	Create3DPhysicsStaticBody( floorOID ) 
+	Create3DPhysicsStaticBody( floorOID )
+	SetObject3DPhysicsFriction(floorOID,1.5)
 
 return
 

@@ -4,9 +4,10 @@ _actor_player:
 	type Player
 		actor as actor
 		CameraPosition	as vec3
-		CameraAngle	as vec3
-		ShootDelay		as float
-		alive				as integer
+		CameraAngle			as vec3
+		ShootDelay			as float
+		alive						as integer
+		lightID 				as integer
 	endtype
 	
 	Global previousMouseX# as float 
@@ -25,8 +26,10 @@ function actor_player_init()
 	Player.actor.OID = CreateObjectBox( 0.4, 0.4, 0.4 )
 	
 	setObjectPosition (Player.actor.OID, 0.0, 5.0, 0.0)
-	Create3DPhysicsDynamicBody( Player.actor.OID ) 
-		
+	Create3DPhysicsDynamicBody( Player.actor.OID )
+	player.lightID = 675
+	CreatePointLight( player.lightID, 0.0, 0.0, 0.0, 13.0, 1400, 455, 328 )
+	SetPointLightMode( player.lightID, 1 ) 
 endfunction
 
 
@@ -79,5 +82,11 @@ function actor_player__input ()
 		print ("xW")
 		SetObject3DPhysicsLinearVelocity(player.actor.OID, 0, 10, 0, 10)
 	endif
+
+	///////////////////////////////////////////////////////////////////////////////
+	// LIGHT
+	///////////////////////////////////////////////////////////////////////////////
+
+	SetPointLightPosition( player.lightID, getObjectX(player.actor.OID), getObjectY(player.actor.OID), getObjectZ(player.actor.OID) ) 
 
 endfunction

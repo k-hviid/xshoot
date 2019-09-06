@@ -12,7 +12,7 @@ Let every actor follow the same rules
 AI
 
 
-tilfældigt genereret landskab, af printed images
+tilfældigt genereret landskab, af printed images - No, can make precise collisions
 
 Der kommer gradvist flere og værre fjender over tid, så man skal opgradere
 
@@ -30,7 +30,9 @@ fjender nærkamp
 Load all media, or only when playing?
 
 
-
+it is a vector. so set your sun position (p1) and then get the position you want the sun to look at (p2)
+Then
+SetSunDirection(p2.x - p1.x, p2.y - p1.y, p2.z - p1.z)
 
 
 
